@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 01:26:49 by aselnet           #+#    #+#             */
-/*   Updated: 2023/09/17 02:57:23 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/09/17 03:01:03 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ void	Account::makeDeposit(int deposit)
 	std::cout << "nb_deposits:" << this->_nbDeposits << std::endl;
 	return ;
 }
+
 bool	Account::makeWithdrawal(int withdrawal)
 {
 	_displayTimestamp();
@@ -110,10 +111,12 @@ bool	Account::makeWithdrawal(int withdrawal)
 	std::cout << "nb_withdrawals:" << this->_nbDeposits << std::endl;
 	return (0);
 }
+
 int		Account::checkAmount(void) const
 {
 	return (_amount);
 }
+
 void	Account::displayStatus(void) const
 {
 	_displayTimestamp();
@@ -123,6 +126,7 @@ void	Account::displayStatus(void) const
 	std::cout << "withdrawals:" << this->_nbWithdrawals << std::endl;
 	return ;
 }
+
 void	Account::displayAccountsInfos(void)
 {
 	_displayTimestamp();
