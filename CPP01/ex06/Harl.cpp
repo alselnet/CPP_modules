@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 19:33:02 by aselnet           #+#    #+#             */
-/*   Updated: 2023/09/17 21:38:15 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/09/17 21:54:51 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,36 @@ void	Harl::complain(std::string level)
 	Harl_ptr[2] = &Harl::warning;
 	Harl_ptr[3] = &Harl::error;
 
-	int	i = -1;
-	while (++i < this->_InstructionNb)
+	int	i = 0;
+	while (i < this->_InstructionNb && HarlInstruction[i].compare(level) != 0)
+		i++;
+	// if (i == this->_InstructionNb)
+	// 	std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+	// while (i < this->_InstructionNb)
+	// {
+	// 	(this->*(Harl_ptr[i]))();
+	// 	i++;
+	// } //WHILE SOLUTION
+	if (i < this->_InstructionNb)
+		std::cout << "[ " << level << " ]" << std::endl; 
+	switch (i)
 	{
-		if (HarlInstruction[i].compare(level) == 0)
-			(this->*(Harl_ptr[i]))();
+		case 0:
+				(this->*(Harl_ptr[0]))();
+				__attribute__ ((fallthrough));
+
+		case 1:
+				(this->*(Harl_ptr[1]))();
+				__attribute__ ((fallthrough));
+		case 2:
+				(this->*(Harl_ptr[2]))();
+				__attribute__ ((fallthrough));
+		case 3:
+				(this->*(Harl_ptr[3]))();
+				break;
+		default:
+				std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+				break;
 	}
 	return ;
 }
