@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 19:43:55 by aselnet           #+#    #+#             */
-/*   Updated: 2023/09/26 22:20:37 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/09/26 22:31:49 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(void)
 	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
-	std::cout << Fixed::max(a,b) << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
 
 	return (0);
 }

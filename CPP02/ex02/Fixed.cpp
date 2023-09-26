@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 17:18:02 by aselnet           #+#    #+#             */
-/*   Updated: 2023/09/26 22:22:34 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/09/26 22:33:24 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,13 +142,13 @@ Fixed	Fixed::operator-(Fixed const &rhs)
 
 Fixed	Fixed::operator*(Fixed const &rhs)
 {
-	Fixed A((this->getRawBits() * rhs.getRawBits()));
+	Fixed A((this->toFloat() * rhs.toFloat()));
 	return (A);
 }
 
 Fixed	Fixed::operator/(Fixed const &rhs)
 {
-	Fixed A((this->getRawBits() / rhs.getRawBits()));
+	Fixed A((this->toFloat() / rhs.toFloat()));
 	return (A);
 }
 
@@ -188,7 +188,7 @@ Fixed	Fixed::operator--(int)
 
 Fixed	&Fixed::min(Fixed &lfs, Fixed &rhs)
 {
-	if (lfs.getRawBits() <= rhs.getRawBits())
+	if (lfs.getRawBits() < rhs.getRawBits())
 		return (lfs);
 	else
 		return (rhs);
@@ -196,7 +196,7 @@ Fixed	&Fixed::min(Fixed &lfs, Fixed &rhs)
 
 Fixed const	&Fixed::min(Fixed const &lfs, Fixed const &rhs)
 {
-	if (lfs.getRawBits() <= rhs.getRawBits())
+	if (lfs.getRawBits() < rhs.getRawBits())
 		return (lfs);
 	else
 		return (rhs);
@@ -204,7 +204,7 @@ Fixed const	&Fixed::min(Fixed const &lfs, Fixed const &rhs)
 
 Fixed	&Fixed::max(Fixed &lfs, Fixed &rhs)
 {
-	if (lfs.getRawBits() >= rhs.getRawBits())
+	if (lfs.getRawBits() > rhs.getRawBits())
 		return (lfs);
 	else
 		return (rhs);
@@ -212,7 +212,7 @@ Fixed	&Fixed::max(Fixed &lfs, Fixed &rhs)
 
 Fixed const	&Fixed::max(Fixed const &lfs, Fixed const &rhs)
 {
-	if (lfs.getRawBits() >= rhs.getRawBits())
+	if (lfs.getRawBits() > rhs.getRawBits())
 		return (lfs);
 	else
 		return (rhs);
@@ -225,5 +225,5 @@ Fixed const	&Fixed::max(Fixed const &lfs, Fixed const &rhs)
 std::ostream	&operator<<(std::ostream &o, Fixed const &rhs)
 {
 	o << rhs.toFloat();
-	return o;
+	return (o);
 }
