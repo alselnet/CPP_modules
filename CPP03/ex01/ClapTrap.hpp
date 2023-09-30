@@ -6,12 +6,13 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 18:58:43 by aselnet           #+#    #+#             */
-/*   Updated: 2023/09/30 19:48:04 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/09/30 20:28:10 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 #define CLAPTRAP_HPP
+
 #include <iostream>
 
 class ClapTrap

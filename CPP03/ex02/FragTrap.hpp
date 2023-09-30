@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 20:07:12 by aselnet           #+#    #+#             */
-/*   Updated: 2023/09/30 20:17:34 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/09/30 20:28:55 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define FRAGTRAP_HPP
 
 #include "ScavTrap.hpp"
+#include <iostream>
 
 class FragTrap : public ClapTrap
 {
