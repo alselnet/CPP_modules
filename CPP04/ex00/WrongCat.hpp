@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 22:45:07 by aselnet           #+#    #+#             */
-/*   Updated: 2023/09/30 22:48:16 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/10/01 15:45:37 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class WrongCat : public WrongAnimal
 	public:
 			WrongCat();
 			WrongCat(const WrongCat &src);
-			~WrongCat();
+			virtual	~WrongCat();
 
 			WrongCat	&operator=(const WrongCat &src);
 

@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 22:19:35 by aselnet           #+#    #+#             */
-/*   Updated: 2023/09/30 22:43:55 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/10/01 15:45:20 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Cat : public Animal
 	public:
 			Cat();
 			Cat(const Cat &src);
-			~Cat();
+			virtual	~Cat();
 
 			Cat	&operator=(const Cat &src);
 

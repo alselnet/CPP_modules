@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/30 22:10:03 by aselnet           #+#    #+#             */
-/*   Updated: 2023/10/01 15:45:15 by aselnet          ###   ########.fr       */
+/*   Created: 2023/10/01 15:41:14 by aselnet           #+#    #+#             */
+/*   Updated: 2023/10/01 16:26:53 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
 #include <iostream>
+#include <string>
 
-class Animal
+class Brain
 {
 	public:
-			Animal();
-			Animal(const Animal &src);
-			virtual	~Animal();
+			Brain();
+			Brain(const Brain &src);
+			virtual	~Brain();
 
-			Animal	&operator=(const Animal &src);
+			Brain	&operator=(const Brain &src);
 
-			virtual void 	makeSound(void) const;
-			std::string		getType(void)	const;
-
-	protected:
-			std::string	type;
+			std::string fetchIdea(int index);
+	private:
+			std::string	_ideas[100];
 };
+
+std::string	genIdea(int maxLength);
 
 #endif
