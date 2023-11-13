@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 17:48:16 by aselnet           #+#    #+#             */
-/*   Updated: 2023/09/17 19:11:11 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/11/13 18:14:35 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	sed::SetFstreams(std::string infile)
 	replace = infile;
 	replace.append(".replace");
 	this->_ofs.open(replace);
+	if (!this->_ofs)
+		return ;
 	return ;
 }
 
@@ -57,7 +59,8 @@ void	sed::OfsWrite(void)
 		{	
 			Buffer.erase(pos, this->_s1.length());
 			Buffer.insert(pos, this->_s2);
-			pos = Buffer.find(this->_s1, 0);
+			pos += this->_s2.size();
+			pos = Buffer.find(this->_s1, pos);
 		}
 		this->_ofs << Buffer << std::endl;
 	}
