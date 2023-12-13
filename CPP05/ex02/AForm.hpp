@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 02:04:20 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/13 04:14:24 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/13 03:36:51 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
 #include <iostream>
 #include "Bureaucrat.hpp"
+#include "PresidentialPardonForm.hpp"
 
-class Form
+class AForm
 {
 	public:
-			Form();
-			Form(std::string name, int sign_req_grade, int exec_req_grade);
-			Form(const Form &src);
-			virtual ~Form();
+			AForm();
+			AForm(std::string name, int sign_req_grade, int exec_req_grade);
+			AForm(const AForm &src);
+			virtual ~AForm();
 
-			Form &operator=(const Form &src);
+			AForm &operator=(const AForm &src);
 
 			std::string	const	getName() const;
 			int const			getSignReqGrade() const;
@@ -33,6 +34,8 @@ class Form
 
 			void				beSigned(Bureaucrat const &Bureaucrat);
 			void				signForm(Bureaucrat const &Bureaucrat);
+
+			virtual void 		execute(Bureaucrat const &executor) const = 0;
 
 			class GradeTooHighException : public std::exception
 			{
@@ -59,6 +62,6 @@ class Form
 			bool				_state;
 };
 
-std::ostream	&operator<<(std::ostream &o, Form const &rhs);
+std::ostream	&operator<<(std::ostream &o, AForm const &rhs);
 
 #endif
