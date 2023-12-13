@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 04:25:01 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/13 05:09:50 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/13 06:23:10 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,9 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
 
 void 	PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
-	try
-	{
-		if (executor.getGrade() > this->getExecReqGrade())
-			throw GradeTooLowException();
-		else
-			std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
-	}
-	catch(const GradeTooLowException &gtl)
-	{
-		std::cout << gtl.what() << std::endl;
-	}
+
+	this->checkExec(executor);
+	std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 	
 	return ;
 }

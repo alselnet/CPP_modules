@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 19:28:14 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/12 20:33:14 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/13 06:47:29 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,20 @@ void	Bureaucrat::decreaseGrade()
 	{
 		std::cout << gtl.what() << std::endl;
 		std::cout << "Grade was not decreased" << std::endl;
+	}
+	return ;
+}
+
+void	Bureaucrat::signForm(Form &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->_name << " signed " << form.getName() << "." << std::endl;
+	}
+	catch(const std::exception &e)
+	{
+		std::cout << this->_name << " couldn't sign " << form.getName() << " because : " << e.what() << "." << std::endl;
 	}
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 02:04:18 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/13 04:08:03 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/13 06:46:55 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,29 +76,25 @@ bool	AForm::getState() const
 
 void	AForm::beSigned(Bureaucrat const &Bureaucrat)
 {
-
-	if (Bureaucrat.getGrade() <= this->_signReqGrade)
-	{
-		this->_state = true;
-	}
-	else
+	if (this->_state == true)
+		throw AlreadySignedException();
+	if (Bureaucrat.getGrade() > this->_signReqGrade)
 		throw GradeTooLowException();
+	else
+		this->_state = true;
 	return ;
 }
 
-void	AForm::signForm(Bureaucrat const &Bureaucrat)
+void	AForm::checkExec(Bureaucrat const &executor) const
 {
-	try
-	{
-		beSigned(Bureaucrat);
-		std::cout << Bureaucrat.getName() << " signed " << this->getName() << "." << std::endl;
-	}
-	catch(const AForm::GradeTooLowException &gtl)
-	{
-		std::cout << Bureaucrat.getName() << " couldn't sign " << this->_name << " because : " << gtl.what() << "." << std::endl;
-	}
-	
+	if (this->_state == false)
+		throw FormNotSignedException();
+	if (this->_execReqGrade < executor.getGrade())
+		throw GradeTooLowException();
+
+	return ;
 }
+
 
 std::ostream	&operator<<(std::ostream &o, AForm const &rhs)
 {

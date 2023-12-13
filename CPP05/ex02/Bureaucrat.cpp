@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 19:28:14 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/13 05:16:20 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/13 06:47:51 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,26 +101,33 @@ void	Bureaucrat::decreaseGrade()
 	return ;
 }
 
-// void	Bureaucrat::executeForm(AForm const &form)
-// {
-// 	try
-// 	{
-// 		if (this->getGrade() < form.getExecReqGrade())
-// 		{
-// 			std::cout << this->getName() << " executed " << form.getName() << "." << std::endl;
-// 			//form.execute(*this);
-// 		}
-// 		else
-// 		{
-// 			throw GradeTooLowException();
-// 		}
-// 	}
-// 	catch(const GradeTooLowException &gtl)
-// 	{
-// 		std::cout << this->getName() << " couldn't execute " << form.getName() << " because : " << gtl.what() << "." << std::endl;
-// 	}
-	
-// }
+void	Bureaucrat::signForm(AForm &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->_name << " signed " << form.getName() << "." << std::endl;
+	}
+	catch(const std::exception &e)
+	{
+		std::cout << this->_name << " couldn't sign " << form.getName() << " because : " << e.what() << "." << std::endl;
+	}
+	return ;	
+}
+
+void	Bureaucrat::executeForm(AForm const &form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->getName() << " has successfully executed " << form.getName() << "." << std::endl;
+	}
+	catch(const std::exception &e)
+	{
+		std::cout << this->getName() << " couldn't execute " << form.getName() << " because : " << e.what() << "." << std::endl;
+	}
+	return ;
+}
 
 
 std::ostream	&operator<<(std::ostream &o, Bureaucrat const &rhs)

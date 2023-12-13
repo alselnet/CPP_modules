@@ -6,7 +6,7 @@
 #    By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 17:44:23 by aselnet           #+#    #+#              #
-#    Updated: 2023/12/13 04:46:46 by aselnet          ###   ########.fr        #
+#    Updated: 2023/12/13 07:15:17 by aselnet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,11 +34,11 @@ FLAGS		=	-Wall -Wextra -Werror -std=c++98
 all			: ${NAME}
 
 %.o: %.c
-		@${CC} ${FLAGS} -c $< -o ${<:.cpp=.o}
+		${CC} ${FLAGS} -c $< -o ${<:.cpp=.o}
 
 ${NAME}		: ${OBJS}
 		@echo "\033[34m----Compiling----"
-		@${CC} ${FLAGS} ${OBJS} -o ${NAME}
+		${CC} ${FLAGS} ${OBJS} -o ${NAME}
 		@echo "OK\033[0m"
 
 clean		:

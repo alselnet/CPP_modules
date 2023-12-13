@@ -6,7 +6,7 @@
 #    By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 17:44:23 by aselnet           #+#    #+#              #
-#    Updated: 2023/12/13 03:09:25 by aselnet          ###   ########.fr        #
+#    Updated: 2023/12/13 07:21:30 by aselnet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ all			: ${NAME}
 
 ${NAME}		: ${OBJS}
 		@echo "\033[34m----Compiling----"
-		@${CC} ${FLAGS} ${OBJS} -o ${NAME}
+		${CC} ${FLAGS} ${OBJS} -o ${NAME}
 		@echo "OK\033[0m"
 
 clean		:

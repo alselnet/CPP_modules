@@ -6,11 +6,10 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 19:42:22 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/13 03:37:26 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/13 06:45:32 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
@@ -47,10 +46,11 @@ int	main(void)
 	{
 		Form a("27B-6", 20, 1);
 		Bureaucrat Terry("Terry", 50);
-		a.signForm(Terry);
+		Terry.signForm(a);
 
 		Form b("27B-7", 100, 1);
-		b.signForm(Terry);
+		Terry.signForm(b);
+		Terry.signForm(b);
 	}
 	return (0);
 }

@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 06:26:59 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/13 06:33:18 by aselnet          ###   ########.fr       */
+/*   Created: 2023/12/13 06:49:33 by aselnet           #+#    #+#             */
+/*   Updated: 2023/12/13 07:03:51 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_HPP
-#define ROBOTOMYREQUESTFORM_HPP
+#ifndef SHRUBBERYCREATIONFORM_HPP
+#define SHRUBBERYCREATIONFORM_HPP
 
 #include <iostream>
+#include <fstream>
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 
-class RobotomyRequestForm : public virtual AForm
+class ShrubberyCreationForm : public virtual AForm
 {
 	public:
-			RobotomyRequestForm();
-			RobotomyRequestForm(Bureaucrat const &Bureaucrat);
-			RobotomyRequestForm(const RobotomyRequestForm &src);
-			virtual ~RobotomyRequestForm();
+			ShrubberyCreationForm();
+			ShrubberyCreationForm(const std::string target);
+			ShrubberyCreationForm(const ShrubberyCreationForm &src);
+			virtual ~ShrubberyCreationForm();
 
-			RobotomyRequestForm &operator=(const RobotomyRequestForm &src);
+			ShrubberyCreationForm &operator=(const ShrubberyCreationForm &src);
 
 			void 	execute(Bureaucrat const &executor) const;
 

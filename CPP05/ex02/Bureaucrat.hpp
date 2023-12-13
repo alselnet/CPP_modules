@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 19:21:20 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/13 05:19:38 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/13 06:18:56 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 #include <iostream>
 #include "AForm.hpp"
-#include "PresidentialPardonForm.hpp"
+
+class AForm;
 
 class Bureaucrat
 {
@@ -32,6 +33,8 @@ class Bureaucrat
 
 			void				raiseGrade();
 			void				decreaseGrade();
+
+			void				signForm(AForm &form);
 
 			void				executeForm(AForm const &form);
 

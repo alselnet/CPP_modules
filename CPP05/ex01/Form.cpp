@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 02:04:18 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/13 03:36:58 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/13 06:45:07 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,28 +76,13 @@ bool	Form::getState() const
 
 void	Form::beSigned(Bureaucrat const &Bureaucrat)
 {
-
-	if (Bureaucrat.getGrade() <= this->_signReqGrade)
-	{
-		this->_state = true;
-	}
-	else
+	if (this->_state == true)
+		throw AlreadySignedException();
+	if (Bureaucrat.getGrade() > this->_signReqGrade)
 		throw GradeTooLowException();
+	else
+		this->_state = true;
 	return ;
-}
-
-void	Form::signForm(Bureaucrat const &Bureaucrat)
-{
-	try
-	{
-		beSigned(Bureaucrat);
-		std::cout << Bureaucrat.getName() << " signed " << this->getName() << "." << std::endl;
-	}
-	catch(const Form::GradeTooLowException &gtl)
-	{
-		std::cout << Bureaucrat.getName() << " couldn't sign " << this->_name << " because : " << gtl.what() << "." << std::endl;
-	}
-	
 }
 
 std::ostream	&operator<<(std::ostream &o, Form const &rhs)

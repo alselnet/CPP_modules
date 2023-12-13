@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 02:04:20 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/13 04:14:24 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/13 06:42:11 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {
@@ -32,14 +34,13 @@ class Form
 			bool				getState() const;
 
 			void				beSigned(Bureaucrat const &Bureaucrat);
-			void				signForm(Bureaucrat const &Bureaucrat);
 
 			class GradeTooHighException : public std::exception
 			{
 				public :
 						virtual const char* what() const throw()
 						{
-							return ("Grade too high");
+							return ("the grade is too high");
 						}
 			};
 
@@ -48,7 +49,16 @@ class Form
 				public :
 						virtual const char* what() const throw()
 						{
-							return ("Grade too low");
+							return ("the grade is too low");
+						}
+			};
+
+			class AlreadySignedException: public std::exception
+			{
+				public :
+						virtual const char* what() const throw()
+						{
+							return ("the form is already signed");
 						}
 			};
 

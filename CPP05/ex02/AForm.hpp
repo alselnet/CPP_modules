@@ -15,7 +15,8 @@
 
 #include <iostream>
 #include "Bureaucrat.hpp"
-#include "PresidentialPardonForm.hpp"
+
+class Bureaucrat;
 
 class AForm
 {
@@ -33,16 +34,16 @@ class AForm
 			bool				getState() const;
 
 			void				beSigned(Bureaucrat const &Bureaucrat);
-			void				signForm(Bureaucrat const &Bureaucrat);
 
 			virtual void 		execute(Bureaucrat const &executor) const = 0;
+			void				checkExec(Bureaucrat const &executor) const;
 
 			class GradeTooHighException : public std::exception
 			{
 				public :
 						virtual const char* what() const throw()
 						{
-							return ("Grade too high");
+							return ("the grade is too high");
 						}
 			};
 
@@ -51,7 +52,25 @@ class AForm
 				public :
 						virtual const char* what() const throw()
 						{
-							return ("Grade too low");
+							return ("the grade is too low");
+						}
+			};
+
+			class AlreadySignedException: public std::exception
+			{
+				public :
+						virtual const char* what() const throw()
+						{
+							return ("the form is already signed");
+						}
+			};
+
+			class FormNotSignedException : public std::exception
+			{
+				public :
+						virtual const char* what() const throw()
+						{
+							return ("the form has not yet been signed");
 						}
 			};
 
