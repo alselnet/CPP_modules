@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 06:26:59 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/13 06:33:18 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/13 08:50:08 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class RobotomyRequestForm : public virtual AForm
 {
 	public:
 			RobotomyRequestForm();
-			RobotomyRequestForm(Bureaucrat const &Bureaucrat);
+			RobotomyRequestForm(std::string const target);
 			RobotomyRequestForm(const RobotomyRequestForm &src);
 			virtual ~RobotomyRequestForm();
 

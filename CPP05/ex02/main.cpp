@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 19:42:22 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/13 07:00:45 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/13 09:15:02 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,19 @@ int	main(void)
 {
 	std::cout << std::endl << "-----Coplien-----" << std::endl;
 	{
+		PresidentialPardonForm 	ppf("Bob");
+		PresidentialPardonForm 	ppf2(ppf);
+		PresidentialPardonForm 	ppf3;
+		RobotomyRequestForm		rrf("Bob");
+		RobotomyRequestForm		rrf2(rrf);
+		RobotomyRequestForm		rrf3;
+		ShrubberyCreationForm	scf("file");
+		ShrubberyCreationForm	scf2(scf);
+		ShrubberyCreationForm	scf3;
+
+		ppf3 = ppf;
+		rrf3 = rrf;
+		scf3 = scf;
 		std::cout << std::endl;
 	}
 
@@ -32,7 +45,7 @@ int	main(void)
 		Bureaucrat 				Terry("Terry", 1);
 		std::cout << Terry << std::endl;
 
-		PresidentialPardonForm 	ppf(Sam);
+		PresidentialPardonForm 	ppf("Bob");
 		std::cout << std::endl << ppf << std::endl;
 
 		AForm					*Form;
@@ -49,7 +62,7 @@ int	main(void)
 	{
 		Bureaucrat 				Sam("Sam", 150);
 		Bureaucrat 				Terry("Terry", 1);
-		RobotomyRequestForm		rrf(Sam);
+		RobotomyRequestForm		rrf("Bob");
 		std::cout << rrf << std::endl;
 
 		AForm					*Form;
@@ -66,7 +79,7 @@ int	main(void)
 	{
 		Bureaucrat 				Sam("Sam", 150);
 		Bureaucrat 				Terry("Terry", 1);
-		ShrubberyCreationForm	scf("test");
+		ShrubberyCreationForm	scf("file");
 		std::cout << scf << std::endl;
 
 		AForm					*Form;

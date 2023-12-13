@@ -6,16 +6,17 @@
 #    By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 17:44:23 by aselnet           #+#    #+#              #
-#    Updated: 2023/12/13 07:15:17 by aselnet          ###   ########.fr        #
+#    Updated: 2023/12/13 09:22:09 by aselnet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	Forms
+NAME		=	Intern
 
 DEPS		=	${OBJS:.o=.d}
 
 CORE		= 	main.cpp\
 				Bureaucrat.cpp\
+				Intern.cpp\
 				AForm.cpp\
 				ShrubberyCreationForm.cpp\
 				RobotomyRequestForm.cpp\

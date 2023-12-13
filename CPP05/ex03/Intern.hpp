@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 06:26:59 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/13 08:50:08 by aselnet          ###   ########.fr       */
+/*   Created: 2023/12/13 08:32:26 by aselnet           #+#    #+#             */
+/*   Updated: 2023/12/13 09:04:20 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_HPP
-#define ROBOTOMYREQUESTFORM_HPP
+#ifndef INTERN_HPP
+#define INTERN_HPP
 
 #include <iostream>
-#include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
-class RobotomyRequestForm : public virtual AForm
+class Intern
 {
 	public:
-			RobotomyRequestForm();
-			RobotomyRequestForm(std::string const target);
-			RobotomyRequestForm(const RobotomyRequestForm &src);
-			virtual ~RobotomyRequestForm();
+			Intern();
+			Intern (const Intern &src);
+			virtual ~Intern();
 
-			RobotomyRequestForm &operator=(const RobotomyRequestForm &src);
+			Intern &operator=(const Intern &src);
 
-			void 	execute(Bureaucrat const &executor) const;
-
-	private:
-			std::string _target;
-
+			AForm *makeForm(std::string const formName, std::string const formTarget);
 };
 
 #endif

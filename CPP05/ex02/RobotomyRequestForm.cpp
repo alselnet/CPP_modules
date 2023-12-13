@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 06:28:40 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/13 06:52:16 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/13 08:50:23 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45
 	return ;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(Bureaucrat const &Bureaucrat) : AForm("RobotomyRequestForm", 72, 45), _target(Bureaucrat.getName())
+RobotomyRequestForm::RobotomyRequestForm(std::string const target) : AForm("RobotomyRequestForm", 72, 45), _target(target)
 {
 	return ;
 }

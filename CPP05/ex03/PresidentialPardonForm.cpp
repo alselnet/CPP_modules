@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 04:25:01 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/13 06:23:10 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/13 08:49:54 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm
 	return ;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(Bureaucrat const &Bureaucrat) : AForm("PresidentialPardonForm", 25, 5), _target(Bureaucrat.getName())
+PresidentialPardonForm::PresidentialPardonForm(std::string const target) : AForm("PresidentialPardonForm", 25, 5), _target(target)
 {
 	return ;
 }
