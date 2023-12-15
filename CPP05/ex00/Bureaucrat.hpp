@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 19:21:20 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/12 20:23:44 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/15 06:53:48 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Bureaucrat
 			Bureaucrat &operator=(const Bureaucrat &src);
 
 			std::string	const	getName() const;
-			int const			getGrade() const;
+			int					getGrade() const;
 
 			void				raiseGrade();
 			void				decreaseGrade();

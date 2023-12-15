@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 19:11:40 by aselnet           #+#    #+#             */
-/*   Updated: 2023/09/15 21:59:56 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/11/13 13:57:02 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,10 @@ void	PhoneBook::search(void) const
 	std::cout << "Please enter the index of the contact you wish to fetch : ";
 	std::cin >> Input;
 
-	if (atoi(Input.data()) < 0 || atoi(Input.data()) > 7)
+	if (Input.compare("0") != 0 && Input.compare("1") != 0 && Input.compare("2") != 0 && Input.compare("3") != 0
+	&& Input.compare("4") != 0 && Input.compare("5") != 0 && Input.compare("6") != 0 && Input.compare("7") != 0)
+		std::cout << "Invalid index" << std::endl;
+	else if (atoi(Input.data()) < 0 || atoi(Input.data()) > 7)
 		std::cout << "Invalid index" << std::endl;
 	else
 		PrintContact(this->List[atoi(Input.data())]);

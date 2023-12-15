@@ -29,8 +29,8 @@ class AForm
 			AForm &operator=(const AForm &src);
 
 			std::string	const	getName() const;
-			int const			getSignReqGrade() const;
-			int const			getExecReqGrade() const;
+			int					getSignReqGrade() const;
+			int					getExecReqGrade() const;
 			bool				getState() const;
 
 			void				beSigned(Bureaucrat const &Bureaucrat);

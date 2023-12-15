@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 02:04:20 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/13 06:42:11 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/15 06:55:50 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ class Form
 			Form &operator=(const Form &src);
 
 			std::string	const	getName() const;
-			int const			getSignReqGrade() const;
-			int const			getExecReqGrade() const;
+			int					getSignReqGrade() const;
+			int					getExecReqGrade() const;
 			bool				getState() const;
 
 			void				beSigned(Bureaucrat const &Bureaucrat);

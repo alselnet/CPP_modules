@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 17:18:02 by aselnet           #+#    #+#             */
-/*   Updated: 2023/09/26 22:13:44 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/11/15 15:43:38 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,11 @@ Fixed::~Fixed()
 float	Fixed::toFloat(void) const
 {
 	return ((float)this->getRawBits() / (float)(1 << this->getFracBits()));
-	return ;
 }
 
 int		Fixed::toInt(void) const
 {
 	return ((this->getRawBits() >> this->getFracBits()));
-	return ;
 }
 
 int	Fixed::getRawBits(void) const

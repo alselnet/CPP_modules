@@ -6,17 +6,17 @@
 #    By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 17:44:23 by aselnet           #+#    #+#              #
-#    Updated: 2023/12/15 07:11:31 by aselnet          ###   ########.fr        #
+#    Updated: 2023/12/15 06:51:42 by aselnet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FILES:=	main Bureaucrat AForm PresidentialPardonForm RobotomyRequestForm ShrubberyCreationForm
-NAME:= forms
+FILES:=	main ScalarConverter
+NAME:= Conversion
 
 # ------------------
 CC:=c++
 CCHPATH:=obj/
-CFLAGS:=-Wall -Wextra -Werror -std=c++98
+CFLAGS:=-Wall -Wextra -Werror -std=c++98 -g
 # ==================
 
 # ----- Colors -----

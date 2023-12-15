@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 19:28:14 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/12 20:33:14 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/15 06:54:11 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ std::string	const Bureaucrat::getName() const
 {
 	return (this->_name);
 }
-int	const	Bureaucrat::getGrade() const
+int	Bureaucrat::getGrade() const
 {
 	return (this->_grade);
 }

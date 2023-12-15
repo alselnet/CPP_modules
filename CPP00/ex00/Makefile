@@ -6,11 +6,11 @@
 #    By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 17:44:23 by aselnet           #+#    #+#              #
-#    Updated: 2023/09/15 18:46:05 by aselnet          ###   ########.fr        #
+#    Updated: 2023/11/13 13:37:49 by aselnet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	Megaphone
+NAME		=	megaphone
 
 DEPS		=	${OBJS:.o=.d}
 

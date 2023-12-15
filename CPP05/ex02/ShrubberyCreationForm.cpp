@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 06:50:58 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/13 07:20:41 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/15 07:13:34 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ void 	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
     if (output.is_open()) 
 	{
         output << "  ^    ^   ^   ^   ^      ^   ^   ^   ^     ^   ^ " << std::endl;
-        output << " /|\\\  /|\\\ /|\\\ /|\\\ /|\\\    /|\\\ /|\\\ /|\\\ /|\\\   /|\\\ /|\\\ " << std::endl;
-        output << " /|\\\  /|\\\ /|\\\ /|\\\ /|\\\    /|\\\ /|\\\ /|\\\ /|\\\   /|\\\ /|\\\ " << std::endl;
-        output << " /|\\\  /|\\\ /|\\\ /|\\\ /|\\\    /|\\\ /|\\\ /|\\\ /|\\\   /|\\\ /|\\\ " << std::endl;
+        output << " /I\\  /I\\ /I\\ /I\\ /I\\    /I\\ /I\\ /I\\ /I\\   /I\\ /I\\ " << std::endl;
+        output << " /I\\  /I\\ /I\\ /I\\ /I\\    /I\\ /I\\ /I\\ /I\\   /I\\ /I\\ " << std::endl;
+        output << " /I\\  /I\\ /I\\ /I\\ /I\\    /I\\ /I\\ /I\\ /I\\   /I\\ /I\\ " << std::endl;
         output.close();
     } 
 	else 

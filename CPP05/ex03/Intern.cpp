@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 08:36:58 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/13 09:32:44 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/15 07:15:39 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ Intern::~Intern()
 
 Intern &Intern::operator=(const Intern &src)
 {
+	(void) src;
 	return (*this);
 }
 

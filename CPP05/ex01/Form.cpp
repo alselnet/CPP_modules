@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 02:04:18 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/13 06:45:07 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/15 06:56:04 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,12 @@ std::string	const Form::getName() const
 	return (this->_name);
 }
 
-int	const	Form::getSignReqGrade() const
+int	Form::getSignReqGrade() const
 {
 	return (this->_signReqGrade);
 }
 
-int	const Form::getExecReqGrade() const
+int	Form::getExecReqGrade() const
 {
 	return (this->_execReqGrade);
 }
