@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   C.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/10 19:42:22 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/15 10:24:25 by aselnet          ###   ########.fr       */
+/*   Created: 2023/12/15 11:35:58 by aselnet           #+#    #+#             */
+/*   Updated: 2023/12/15 11:36:09 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef C_HPP
+# define C_HPP
 
-int	main(int argc, char **argv)
+# include <iostream>
+# include "Base.hpp"
+
+class C : public Base
 {
-	if (argc != 2)
-	{
-		std::cerr << "./ScalarConverter std::string" << std::endl;
-		return (1);
-	}
-	ScalarConverter::convert(argv[1]);
-	return (0);
-}
+
+};
+
+#endif
