@@ -6,7 +6,7 @@
 #    By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 17:44:23 by aselnet           #+#    #+#              #
-#    Updated: 2023/12/15 07:15:55 by aselnet          ###   ########.fr        #
+#    Updated: 2023/12/29 10:35:40 by aselnet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,7 @@ clean:
 	@rm -f ${CCHF}
 
 fclean:	clean
+	@rm -f test_shrubbery
 	@rm -f ${NAME}
 	@rm -rf ${NAME}.dSYM/
 

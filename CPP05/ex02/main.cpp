@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 19:42:22 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/13 09:15:02 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/29 10:08:15 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,17 @@ int	main(void)
 	{
 		PresidentialPardonForm 	ppf("Bob");
 		PresidentialPardonForm 	ppf2(ppf);
-		PresidentialPardonForm 	ppf3;
+		//PresidentialPardonForm 	ppf3;
 		RobotomyRequestForm		rrf("Bob");
 		RobotomyRequestForm		rrf2(rrf);
-		RobotomyRequestForm		rrf3;
+		//RobotomyRequestForm		rrf3;
 		ShrubberyCreationForm	scf("file");
 		ShrubberyCreationForm	scf2(scf);
-		ShrubberyCreationForm	scf3;
+		//ShrubberyCreationForm	scf3;
 
-		ppf3 = ppf;
-		rrf3 = rrf;
-		scf3 = scf;
+		// ppf3 = ppf;
+		// rrf3 = rrf;
+		// scf3 = scf;
 		std::cout << std::endl;
 	}
 

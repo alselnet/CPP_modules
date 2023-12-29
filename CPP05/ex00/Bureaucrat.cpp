@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 19:28:14 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/15 06:54:11 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/29 09:51:43 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,9 @@ void	Bureaucrat::raiseGrade()
 		else
 			this->_grade--;
 	}
-	catch(Bureaucrat::GradeTooHighException &gth)
+	catch(std::exception &e)
 	{
-		std::cout << gth.what() << std::endl;
+		std::cout << e.what() << std::endl;
 		std::cout << "Grade was not raised" << std::endl;
 	}
 	return ;
@@ -93,9 +93,9 @@ void	Bureaucrat::decreaseGrade()
 		else
 			this->_grade++;
 	}
-	catch(Bureaucrat::GradeTooLowException &gtl)
+	catch(std::exception &e)
 	{
-		std::cout << gtl.what() << std::endl;
+		std::cout << e.what() << std::endl;
 		std::cout << "Grade was not decreased" << std::endl;
 	}
 	return ;

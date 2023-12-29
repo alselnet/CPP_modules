@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 06:50:58 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/15 07:14:38 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/29 10:35:17 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void 	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 
 	this->checkExec(executor);
 	std::string file = this->_target + "_shrubbery";
-	std::ofstream output(file);
+	std::ofstream output(file.c_str());
 
     if (output.is_open()) 
 	{

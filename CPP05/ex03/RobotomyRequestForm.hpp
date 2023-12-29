@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 06:26:59 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/13 08:50:08 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/29 10:35:08 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #define ROBOTOMYREQUESTFORM_HPP
 
 #include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 

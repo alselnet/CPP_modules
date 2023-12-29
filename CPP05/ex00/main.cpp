@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 19:42:22 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/12 20:37:47 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/29 09:49:35 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ int	main(void)
 	std::cout << std::endl << "-----Test 0-----" << std::endl;
 	{
 		Bureaucrat Terry("Terry", 58);
+		std::cout << Terry << std::endl;
+		Terry.raiseGrade();
+		std::cout << Terry << std::endl;
+		Terry.decreaseGrade();
 		std::cout << Terry << std::endl;
 	}
 

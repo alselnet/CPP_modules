@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 06:49:33 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/13 07:03:51 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/29 10:20:51 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 class ShrubberyCreationForm : public virtual AForm
 {
 	public:
-			ShrubberyCreationForm();
 			ShrubberyCreationForm(const std::string target);
 			ShrubberyCreationForm(const ShrubberyCreationForm &src);
 			virtual ~ShrubberyCreationForm();
@@ -31,6 +30,7 @@ class ShrubberyCreationForm : public virtual AForm
 			void 	execute(Bureaucrat const &executor) const;
 
 	private:
+			ShrubberyCreationForm();
 			std::string _target;
 
 };

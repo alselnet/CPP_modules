@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 02:04:18 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/15 06:56:04 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/29 10:01:03 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,11 @@ Form::Form(std::string name, int sign_req_grade, int exec_req_grade) : _name(nam
 		else if (sign_req_grade > 150 || exec_req_grade > 150)
 			throw Form::GradeTooLowException();
 	}
-	catch (Form::GradeTooHighException &gth)
+	catch (std::exception &e)
 	{
-		std::cout << gth.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
-	catch (Form::GradeTooLowException &gtl)
-	{
-		std::cout << gtl.what() << std::endl;
-	}
+
 	return ;
 }
 
