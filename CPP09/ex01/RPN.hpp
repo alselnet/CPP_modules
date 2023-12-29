@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/17 10:23:14 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/28 18:15:24 by aselnet          ###   ########.fr       */
+/*   Created: 2023/12/28 13:46:44 by aselnet           #+#    #+#             */
+/*   Updated: 2023/12/28 18:12:56 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BitcoinExchange.hpp"
+#ifndef RPN_HPP
+#define RPN_HPP
 
-int main()
-{
-	BitcoinExchange B("data.csv");
+#include <iostream>
+#include <sstream>
+#include <stack>
 
-	B.processPrices("input.txt");
-	return (0);
-}
+
+#endif

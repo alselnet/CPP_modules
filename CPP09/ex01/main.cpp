@@ -6,16 +6,23 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 10:23:14 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/28 18:15:24 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/28 18:16:41 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BitcoinExchange.hpp"
+#include "RPN.hpp"
 
-int main()
+int main(int argc, char **argv)
 {
-	BitcoinExchange B("data.csv");
+	std::stack <int>	stack;
+	std::string			expression;
 
-	B.processPrices("input.txt");
+	if (argc != 2)
+	{
+		std::cerr << "Incorrect number of arguments." << std::endl;
+		return (1);
+	}
+	expression = argv[1];
+	
 	return (0);
 }

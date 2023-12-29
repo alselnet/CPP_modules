@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 14:56:54 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/28 17:33:20 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/28 18:44:39 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -204,8 +204,8 @@ void	BitcoinExchange::processPrices(std::string input) const
 		iss >> value;
 		if (checkKey(key) == false)
             std::cerr << "Error: bad input => " << errorKey << std::endl;
-		else if (iss.fail()) 
-            std::cerr << "Error: incorrect value." << std::endl;
+		else if (iss.fail() || !iss.eof()) 
+            std::cerr << "Error: bad value." << std::endl;
 		else if (checkVal(value) == true)
 		{
 			double price;
