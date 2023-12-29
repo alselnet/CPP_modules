@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 14:56:54 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/28 18:44:39 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/29 16:32:09 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ BitcoinExchange::BitcoinExchange()
 
 BitcoinExchange::BitcoinExchange(const std::string csv)
 {
-	std::ifstream	inputFile(csv);
+	std::ifstream	inputFile(csv.c_str());
 
     std::string line;
 
@@ -175,7 +175,7 @@ bool	checkVal(double value)
 
 void	BitcoinExchange::processPrices(std::string input) const
 {
-	std::ifstream	inputFile(input);
+	std::ifstream	inputFile(input.c_str());
 
     std::string line;
 

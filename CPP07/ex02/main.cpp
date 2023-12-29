@@ -6,12 +6,15 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 10:23:14 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/17 10:55:15 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/29 16:35:25 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
 #include "Array.tpp"
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 #define MAX_VAL 750
 int main(int, char**)

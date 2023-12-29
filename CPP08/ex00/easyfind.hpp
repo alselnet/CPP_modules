@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 11:36:16 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/18 16:46:56 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/29 16:41:29 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define EASYFIND_HPP
 
 #include <iostream>
-#include <array>
 #include <list>
 
 
