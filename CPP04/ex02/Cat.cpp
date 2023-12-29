@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 22:20:47 by aselnet           #+#    #+#             */
-/*   Updated: 2023/10/01 16:50:16 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/11/15 20:18:09 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ Cat::Cat(const Cat &src)
 {
 	std::cout << "Cat copy constructor called." << std::endl;
 	*(this->brain) = *(src.brain);
+	if (this->brain != 0)
+		delete this->brain;
+	this->brain = new Brain();
 	*this = src;
 	return ;
 }
@@ -39,6 +42,9 @@ Cat	&Cat::operator=(const Cat &src)
 	if (this != &src)
 	{
 		this->type = src.type;
+		if (this->brain != 0)
+			delete this->brain;
+		this->brain = new Brain();
 		*(this->brain) = *(src.brain);
 	}
 	return (*this);

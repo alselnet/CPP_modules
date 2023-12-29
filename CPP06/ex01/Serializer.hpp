@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 10:28:59 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/15 10:41:42 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/29 16:24:25 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 #define SERIALIZER_HPP
 
 #include <iostream>
+#include <stdint.h>
 #include "Data.hpp"
+
+typedef size_t uintptr_t;
 
 class Serializer
 {

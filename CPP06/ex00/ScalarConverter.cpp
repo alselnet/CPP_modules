@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 05:18:06 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/15 10:18:56 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/29 15:54:46 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,11 +121,16 @@ void	printInt(std::string literal)
 
 	try
 	{
-		i = std::stoi(literal);
-		if (i < 128)
+		std::istringstream	ss (literal);
+		ss >> i;
+		if ((i == std::numeric_limits<int>::max() || i == std::numeric_limits<int>::min()) && ss.fail())
+			throw std::out_of_range("no possible conversion");
+		else if (i < 128)
 		{
-			if (i < 32)
+			if (i < 32 && i > -1)
 				std::cout << "char: Not displayable" << std::endl;
+			else if (i < 0)
+				std::cout << "char: impossible" << std::endl;
 			else
 			{
 				char c = static_cast <char>(i);
@@ -193,7 +198,10 @@ void	printFloat(std::string literal)
 	}
 	try
 	{
-		f = std::stof(literal);
+		std::istringstream ss(literal);
+		ss >> f;
+		if ((f == std::numeric_limits<float>::max() || f == std::numeric_limits<float>::min()) && ss.fail())
+			throw std::out_of_range("no possible conversion");
 	}
 	catch(const std::out_of_range &oor)
 	{  
@@ -203,7 +211,7 @@ void	printFloat(std::string literal)
 		std::cerr << "double: overflow (" << oor.what() << ")" << std::endl;
 		return ;
 	}
-	if (f < std::numeric_limits<int>::lowest() || f > std::numeric_limits<int>::max())
+	if (f < std::numeric_limits<int>::min() || f > std::numeric_limits<int>::max())
 	{
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
@@ -213,8 +221,10 @@ void	printFloat(std::string literal)
 		i = static_cast <int> (f);
 		if (i < 128)
 		{
-			if (i < 32)
+			if (i < 32 && i > -1)
 				std::cout << "char: Not displayable" << std::endl;
+			else if (i < 0)
+				std::cout << "char: impossible" << std::endl;
 			else
 			{
 				char c = static_cast <char>(i);
@@ -272,7 +282,10 @@ void	printDouble(std::string literal)
 	}
 	try
 	{
-		d = std::stod(literal);
+		std::istringstream	ss (literal);
+		ss >> d;
+		if ((d == std::numeric_limits<double>::max() || d == std::numeric_limits<double>::min()) && ss.fail())
+			throw std::out_of_range("no possible conversion");
 	}
 	catch(const std::out_of_range &oor)
 	{  
@@ -282,7 +295,7 @@ void	printDouble(std::string literal)
 		std::cerr << "double: overflow (" << oor.what() << ")" << std::endl;
 		return ;
 	}
-	if (d < std::numeric_limits<int>::lowest() || d > std::numeric_limits<int>::max())
+	if (d < std::numeric_limits<int>::min() || d > std::numeric_limits<int>::max())
 	{
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
@@ -292,8 +305,10 @@ void	printDouble(std::string literal)
 		i = static_cast <int> (d);
 		if (i < 128)
 		{
-			if (i < 32)
+			if (i < 32 && i > -1)
 				std::cout << "char: Not displayable" << std::endl;
+			else if (i < 0)
+				std::cout << "char: impossible" << std::endl;
 			else
 			{
 				char c = static_cast <char>(i);
@@ -304,7 +319,7 @@ void	printDouble(std::string literal)
 			std::cout << "char: impossible" << std::endl;
 		std::cout << "int: " << i << std::endl;
 	}
-	if (d < std::numeric_limits<float>::lowest() || d > std::numeric_limits<float>::max())
+	if (d < std::numeric_limits<float>::min() || d > std::numeric_limits<float>::max())
 		std::cout << "float: impossible" << std::endl;
 	else
 	{

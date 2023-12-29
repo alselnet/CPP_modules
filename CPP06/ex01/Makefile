@@ -6,7 +6,7 @@
 #    By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 17:44:23 by aselnet           #+#    #+#              #
-#    Updated: 2023/12/15 10:28:40 by aselnet          ###   ########.fr        #
+#    Updated: 2023/12/29 16:10:23 by aselnet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ FILES:=	main Serializer
 NAME:= Serialization
 
 # ------------------
-CC:=c++
+CC:=g++
 CCHPATH:=obj/
 CFLAGS:=-Wall -Wextra -Werror -std=c++98 -g
 # ==================
