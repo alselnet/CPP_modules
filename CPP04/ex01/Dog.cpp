@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 22:26:07 by aselnet           #+#    #+#             */
-/*   Updated: 2023/10/01 16:49:56 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/11/15 20:16:34 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ Dog::Dog()
 Dog::Dog(const Dog &src)
 {
 	std::cout << "Dog copy constructor called." << std::endl;
+	if (this->brain != 0)
+		delete this->brain;
+	this->brain = new Brain();
 	*(this->brain) = *(src.brain);
 	*this = src;
 	return ;
@@ -39,6 +42,9 @@ Dog	&Dog::operator=(const Dog &src)
 	if (this != &src)
 	{
 		this->type = src.type;
+		if (this->brain != 0)
+			delete this->brain;
+		this->brain = new Brain();
 		*(this->brain) = *(src.brain);
 	}
 	return (*this);

@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 22:09:52 by aselnet           #+#    #+#             */
-/*   Updated: 2023/10/01 17:27:43 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/11/15 20:18:00 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ Animal::Animal(const Animal &src)
 {
 	std::cout << "Animal copy constructor called." << std::endl;
 	*(this->brain) = *(src.brain);
+	if (this->brain != 0)
+		delete this->brain;
+	this->brain = new Brain();
 	*this = src;
 	return ;
 }
@@ -40,6 +43,9 @@ Animal	&Animal::operator=(const Animal &src)
 	if (this != &src)
 	{
 		this->type = src.type;
+		if (this->brain != 0)
+			delete this->brain;
+		this->brain = new Brain();
 		*(this->brain) = *(src.brain);
 	}
 	return (*this);

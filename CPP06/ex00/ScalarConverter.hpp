@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 05:17:26 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/15 10:01:18 by aselnet          ###   ########.fr       */
+/*   Updated: 2023/12/29 15:25:25 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <limits>
+#include <stdexcept>
+#include <sstream>
 
 class ScalarConverter
 {
