@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 17:07:26 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/21 19:05:10 by aselnet          ###   ########.fr       */
+/*   Updated: 2024/01/02 14:05:54 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,13 +87,17 @@ int	span::shortestSpan(void)
 	it = copy.begin();
 	it2 = copy.begin();
 	it2++;
-	span = abs(*it2 - *it);
+
+	int abs = *it2 - *it;
+	if (abs < 0)
+		abs = -abs;
+	span = abs;
 	while (it2 != copy.end())
 	{
 		it++;
 		it2++;
-		if (span > abs(*it2 - *it))
-			span = abs(*it2 - *it);
+		if (span > abs)
+			span = abs;
 	}
 
 	return (span);

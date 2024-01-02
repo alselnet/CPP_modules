@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 11:36:16 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/21 19:00:13 by aselnet          ###   ########.fr       */
+/*   Updated: 2024/01/02 14:26:10 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <iostream>
 #include <list>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 class span
 {

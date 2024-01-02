@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 10:23:14 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/21 19:07:00 by aselnet          ###   ########.fr       */
+/*   Updated: 2024/01/02 14:25:20 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,9 @@ int main()
 	{
 		span s1(7);
 		span s2(6);
-		int	i = 0;
 
 		int	tmp[] = {-5, 18, 89, -21, 42, 0, 210};
-		std::list<int> list(std::begin(tmp), std::end(tmp));
+		std::list<int> list(tmp, tmp + sizeof(tmp) / sizeof(tmp[0]));
 		std::cout << "filling size 7 array with size 7 list:" << std::endl;
 		try
 		{
@@ -82,7 +81,6 @@ int main()
 		}
 		
 		std::cout << std::endl << "filling size 6 array with size 7 list:" << std::endl;
-		i = 0;
 		try
 		{
 			s2.fillFromRange(list.begin(), list.end());
@@ -97,10 +95,9 @@ int main()
 	{
 		span s1(10);
 		span s2(10);
-		int	i = 0;
 
 		int	tmp[] = {-5, 18, 89, -21, 42, 0, 210};
-		std::list<int> list(std::begin(tmp), std::end(tmp));
+		std::list<int> list(tmp, tmp + sizeof(tmp) / sizeof(tmp[0]));
 		std::cout << "shortest span:" << std::endl;
 		try
 		{
@@ -119,7 +116,6 @@ int main()
 			std::cout << e.what() << std::endl << std::endl;
 		}
 		std::cout << std::endl << "longest span :" << std::endl;
-		i = 0;
 		try
 		{
 			s2.fillFromRange(list.begin(), list.end());
@@ -141,8 +137,7 @@ int main()
 	{
 		span s1(1);
 		span s2(1);
-		int	i = 0;
-
+	
 		std::cout << "shortest span:" << std::endl;
 		try
 		{
@@ -161,7 +156,7 @@ int main()
 			std::cout << e.what() << std::endl << std::endl;
 		}
 		std::cout << std::endl << "longest span :" << std::endl;
-		i = 0;
+
 		try
 		{
 			s2.addNumber(42);
@@ -170,6 +165,46 @@ int main()
 		{
 			std::cerr << e.what() << '\n';
 		}
+		try
+		{
+			std::cout << s1.longestSpan() << std::endl << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			std::cout << e.what() << std::endl << std::endl;
+		}
+	}
+		std::cout << std::endl << "-----Test 4 : trying span on size 20,000 list-----" << std::endl;
+	{
+		span s1(20000);
+		span s2(20000);
+	
+		srand(time(NULL));
+    	std::list<int> bigList;
+
+		for (int i = 0; i < 20000; ++i) 
+		{
+			int randomNum = rand();
+			bigList.push_back(randomNum);
+		}
+		try
+		{
+			s1.fillFromRange(bigList.begin(), bigList.end());
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+		std::cout << "shortest span:" << std::endl;
+		try
+		{
+			std::cout << s1.shortestSpan() << std::endl << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			std::cout << e.what() << std::endl << std::endl;
+		}
+		std::cout << "longest span:" << std::endl;
 		try
 		{
 			std::cout << s1.longestSpan() << std::endl << std::endl;
