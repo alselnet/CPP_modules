@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 09:54:33 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/17 10:53:30 by aselnet          ###   ########.fr       */
+/*   Updated: 2024/01/02 13:32:19 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ template <typename T>
 Array<T>::Array()
 {
 	this->_size = 0;
-	this->_tab = new T[this->_size];
+	this->_tab = NULL;
 
 	return ;
 }
@@ -61,7 +61,7 @@ Array<T>	&Array<T>::operator=(const Array<T> &src)
 template <typename T>
 T	&Array<T>::operator[](size_t index) const
 {
-	if (index < 0 || index >= this->_size)
+	if (index >= this->_size || this->_size < 1)
 	{
 		throw (std::out_of_range("wrong index"));
 	}
