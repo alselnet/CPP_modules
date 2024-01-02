@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 11:36:16 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/17 09:22:22 by aselnet          ###   ########.fr       */
+/*   Updated: 2024/01/02 12:54:11 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 template <typename T>
 void	swap(T &a, T &b)
 {
-	T	tmp;
-	tmp = a;
+	T	tmp = a;
+
 	a = b;
 	b = tmp;
 
@@ -27,7 +27,7 @@ void	swap(T &a, T &b)
 }
 
 template <typename T>
-T const	min(T const &a, T const &b)
+T &min(T &a, T &b)
 {
 	if (a < b)
 		return (a);
@@ -36,7 +36,7 @@ T const	min(T const &a, T const &b)
 }
 
 template <typename T>
-T const	max(T const &a, T const &b)
+T &max(T &a, T &b)
 {
 	if (a > b)
 		return (a);
