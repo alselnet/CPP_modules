@@ -6,12 +6,12 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 10:23:14 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/29 16:40:10 by aselnet          ###   ########.fr       */
+/*   Updated: 2024/01/03 14:58:35 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "easyfind.hpp"
-#include "easyfind.tpp"
+#include "../include/easyfind.hpp"
+#include "../include/easyfind.tpp"
 
 int main()
 {

@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 14:56:54 by aselnet           #+#    #+#             */
-/*   Updated: 2024/01/01 00:41:03 by aselnet          ###   ########.fr       */
+/*   Updated: 2024/01/02 16:17:47 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,13 +153,17 @@ void	insertion_sort_list(std::list<unsigned int>::iterator start, std::list<unsi
 {
 	std::list<unsigned int>::iterator it_next;
 
-	for(it_next = std::next(start); it_next != end; it_next++)
+	std::list<unsigned int>::iterator next = start;
+	next++;
+	for(it_next = next; it_next != end; it_next++)
 	{
 		unsigned int tmp = *it_next;
 		std::list<unsigned int>::iterator it = it_next;
-		while (it != start && *(std::prev(it)) > tmp)
+		std::list<unsigned int>::iterator prev = it;
+		prev--;
+		while (it != start && *prev > tmp)
 		{
-			*it = *(std::prev(it));
+			*it = *prev;
 			--it;
 		}
 		*it = tmp;

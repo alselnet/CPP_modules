@@ -5,21 +5,39 @@
 #                                                     +:+ +:+         +:+      #
 #    By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/15 17:44:23 by aselnet           #+#    #+#              #
-#    Updated: 2023/12/29 16:41:45 by aselnet          ###   ########.fr        #
+#    Created: 2024/01/03 15:36:57 by aselnet           #+#    #+#              #
+#    Updated: 2024/01/03 16:06:11 by aselnet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FILES:=	main
-NAME:= easyfind
+CC := c++
+CFLAGS := -Wall -Wextra -Werror -std=c++98 -g
+INCLUDES := -I./include
 
-# ------------------
-CC:=c++
-CCHPATH:=obj/
-CFLAGS:=-Wall -Wextra -Werror -std=c++98 -g
 # ==================
 
-# ----- Colors -----
+SRCDIR := src
+OBJDIR := obj
+BINDIR := bin
+
+# ==================
+
+NAME := $(BINDIR)/easyfind
+
+FILES := main
+
+SOURCES := $(addprefix $(SRCDIR)/, $(addsuffix .cpp, $(FILES)))
+
+OBJECTS := $(addprefix $(OBJDIR)/, $(addsuffix .o, $(FILES)))
+
+DEPS := $(addprefix $(OBJDIR)/, $(addsuffix .d, $(FILES)))
+
+# ==================
+
+$(shell mkdir -p $(OBJDIR) $(BINDIR))
+
+# ==================
+
 BLACK:="\033[1;30m"
 RED:="\033[1;31m"
 GREEN:="\033[1;32m"
@@ -27,41 +45,39 @@ CYAN:="\033[1;35m"
 PURPLE:="\033[1;36m"
 WHITE:="\033[1;37m"
 EOC:="\033[0;0m"
+
 # ==================
 
-# ------ Auto ------
-SRC:=$(addprefix $(SRCPATH),$(addsuffix .cpp,$(FILES)))
-OBJ:=$(addprefix $(CCHPATH),$(addsuffix .o,$(FILES)))
-# ==================
-CCHF:=.cache_exists
+all: $(NAME)
 
-all: ${NAME}
-
-${NAME}: ${OBJ}
-	@echo ${CYAN} " - Compiling $@" $(RED)
-	@${CC} ${CFLAGS} ${SRC} -o ${NAME}
+$(NAME): $(OBJECTS) | ${OBJDIR}
+	@echo ${CYAN} " - Linking $@" $(RED)
+	@$(CC) $(CFLAGS) $(INCLUDES) $^ -o $@
 	@echo $(GREEN) " - OK" $(EOC)
 
-${CCHPATH}%.o: ${SRCPATH}%.cpp | ${CCHF}
-	@echo ${PURPLE} " - Compiling $< into $@" ${EOC}
-	@${CC} ${CFLAGS} -c $< -o $@
+-include $(DEPS)
 
-%.cpp:
-	@echo ${RED}"Missing file : $@" ${EOC}
-
-$(CCHF):
-	@mkdir $(CCHPATH)
-	@touch $(CCHF)
+$(OBJDIR)/%.o: $(SRCDIR)/%.cpp | ${OBJDIR}
+	@echo ${PURPLE} " - Compiling $<" ${EOC}
+	@$(CC) $(CFLAGS) $(INCLUDES) -MMD -MP -c $< -o $@
 
 clean:
-	@rm -rf ${CCHPATH}
-	@rm -f ${CCHF}
+	@echo ${GREEN} " - Cleaning objs..."
+	@rm -rf $(OBJDIR)
 
-fclean:	clean
-	@rm -f ${NAME}
-	@rm -rf ${NAME}.dSYM/
+fclean: clean
+	@echo ${GREEN} " - Cleaning bin..."
+	@rm -rf $(BINDIR)
 
-re:	fclean
-	@${MAKE} all
+re: fclean
+	@${MAKE} -s all
 
-.PHONY:	all clean fclean re
+.PHONY: all clean fclean re
+
+$(DEPS): | $(OBJDIR)
+
+$(OBJDIR):
+	@mkdir -p $(OBJDIR)
+
+$(BINDIR):
+	@mkdir -p $(BINDIR)
