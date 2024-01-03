@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 10:23:14 by aselnet           #+#    #+#             */
-/*   Updated: 2024/01/02 14:40:36 by aselnet          ###   ########.fr       */
+/*   Updated: 2024/01/03 18:13:25 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int main()
 		mstack.push(3);
 		mstack.push(5);
 		mstack.push(737);
-		//[...]
 		mstack.push(0);
 		MutantStack<int>::iterator it = mstack.begin();
 		MutantStack<int>::iterator ite = mstack.end();
