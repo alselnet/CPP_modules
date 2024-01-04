@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 10:23:14 by aselnet           #+#    #+#             */
-/*   Updated: 2024/01/01 00:38:48 by aselnet          ###   ########.fr       */
+/*   Updated: 2024/01/04 14:24:15 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 {
 	if (argc < 3)
 	{
-		std::cerr << "error: incorrect number of arguments." << std::endl;
+		std::cout << "error: incorrect number of arguments." << std::endl;
 		return (-1);
 	}
 
@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 	{
 		if (isUint(argv[i]) == false)
 		{
-			std::cerr << "error : invalid argument : " << argv[i] << std::endl;
+			std::cout << "error : invalid argument : " << argv[i] << std::endl;
 			return (-1);
 		}
 	}
