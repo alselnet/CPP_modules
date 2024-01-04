@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 10:23:14 by aselnet           #+#    #+#             */
-/*   Updated: 2024/01/04 17:15:01 by aselnet          ###   ########.fr       */
+/*   Updated: 2024/01/04 17:40:20 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,27 +29,19 @@ int main()
 	{
 		span s1(10);
 		span s2(10);
-		int	i = 0;
 
-		std::cout << "adding 10 numbers to 10 elem capacity span:" << std::endl;
 		try
 		{
+			int i = 0;
+			std::cout << "adding 10 numbers to 10 elem capacity span:" << std::endl;
 			while (i < 10)
 			{
 				s1.addNumber(i);
 				std::cout << i << std::endl;
 				i++;
 			}
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
-		
-		std::cout << std::endl << "adding 11 numbers to 10 elem capacity span:" << std::endl;
-		i = 0;
-		try
-		{
+			std::cout << std::endl << "adding 11 numbers to 10 elem capacity span:" << std::endl;
+			i = 0;
 			while (i < 11)
 			{
 				s2.addNumber(i);
@@ -59,9 +51,8 @@ int main()
 		}
 		catch(const std::exception& e)
 		{
-			std::cerr << e.what() << '\n';
-		}
-		
+			std::cout << e.what() << '\n';
+		}	
 	}
 		std::cout << std::endl << "-----Test 1 : adding elements with fill-----" << std::endl;
 	{
@@ -70,26 +61,19 @@ int main()
 
 		int	tmp[] = {-5, 18, 89, -21, 42, 0, 210};
 		std::list<int> list(tmp, tmp + sizeof(tmp) / sizeof(tmp[0]));
-		std::cout << "filling size 7 array with size 7 list:" << std::endl;
 		try
 		{
+			std::cout << "filling size 7 array with size 7 list:" << std::endl;
 			s1.fillFromRange(list.begin(), list.end());
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
-		
-		std::cout << std::endl << "filling size 6 array with size 7 list:" << std::endl;
-		try
-		{
+			std::cout << "ok" << std::endl;
+			std::cout << std::endl << "filling size 6 array with size 7 list:" << std::endl;
 			s2.fillFromRange(list.begin(), list.end());
+			std::cout << "ok" << std::endl;
 		}
 		catch(const std::exception& e)
 		{
 			std::cerr << e.what() << '\n';
-		}
-		
+		}	
 	}
 	std::cout << std::endl << "-----Test 2 : shortest span / longest span-----" << std::endl;
 	{
@@ -102,38 +86,16 @@ int main()
 		try
 		{
 			s1.fillFromRange(list.begin(), list.end());
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
-		try
-		{
 			std::cout << s1.shortestSpan() << std::endl;
-		}
-		catch(const std::exception& e)
-		{
-			std::cout << e.what() << std::endl << std::endl;
-		}
-		std::cout << std::endl << "longest span :" << std::endl;
-		try
-		{
-			s2.fillFromRange(list.begin(), list.end());
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
-		try
-		{
+			std::cout << std::endl << "longest span :" << std::endl;
 			std::cout << s1.longestSpan() << std::endl << std::endl;
 		}
 		catch(const std::exception& e)
 		{
-			std::cout << e.what() << std::endl << std::endl;
+			std::cerr << e.what() << '\n';
 		}
 	}
-	std::cout << std::endl << "-----Test 3 : trying span on size 1 array-----" << std::endl;
+	std::cout << "-----Test 3 : trying span on size 1 array-----" << std::endl;
 	{
 		span s1(1);
 		span s2(1);
@@ -142,39 +104,49 @@ int main()
 		try
 		{
 			s1.addNumber(42);
+			std::cout << s1.shortestSpan() << std::endl << std::endl;
 		}
 		catch(const std::exception& e)
 		{
 			std::cerr << e.what() << '\n';
 		}
+		try
+		{
+		
+			std::cout << std::endl << "longest span :" << std::endl;
+			std::cout << s1.longestSpan() << std::endl << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << std::endl;
+		}
+	}
+	std::cout << std::endl << "-----Test 4 : trying span on size 0 array-----" << std::endl;
+	{
+		span s1(0);
+		span s2(0);
+	
+		std::cout << "shortest span:" << std::endl;
 		try
 		{
 			std::cout << s1.shortestSpan() << std::endl << std::endl;
 		}
 		catch(const std::exception& e)
 		{
-			std::cout << e.what() << std::endl << std::endl;
+			std::cerr << e.what() << '\n';
 		}
-		std::cout << std::endl << "longest span :" << std::endl;
-
 		try
 		{
-			s2.addNumber(42);
+		
+			std::cout << std::endl << "longest span :" << std::endl;
+			std::cout << s1.longestSpan() << std::endl << std::endl;
 		}
 		catch(const std::exception& e)
 		{
 			std::cerr << e.what() << '\n';
 		}
-		try
-		{
-			std::cout << s1.longestSpan() << std::endl << std::endl;
-		}
-		catch(const std::exception& e)
-		{
-			std::cout << e.what() << std::endl << std::endl;
-		}
 	}
-		std::cout << std::endl << "-----Test 4 : trying span on size 20,000 list-----" << std::endl;
+	std::cout << std::endl << "-----Test 5 : trying span on size 20,000 array-----" << std::endl;
 	{
 		span s1(20000);
 		span s2(20000);
@@ -190,28 +162,14 @@ int main()
 		try
 		{
 			s1.fillFromRange(bigList.begin(), bigList.end());
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
-		std::cout << "shortest span:" << std::endl;
-		try
-		{
+			std::cout << "shortest span:" << std::endl;
 			std::cout << s1.shortestSpan() << std::endl << std::endl;
+			std::cout << "longest span:" << std::endl;
+			std::cout << s1.longestSpan() << std::endl;
 		}
 		catch(const std::exception& e)
 		{
-			std::cout << e.what() << std::endl << std::endl;
-		}
-		std::cout << "longest span:" << std::endl;
-		try
-		{
-			std::cout << s1.longestSpan() << std::endl << std::endl;
-		}
-		catch(const std::exception& e)
-		{
-			std::cout << e.what() << std::endl << std::endl;
+			std::cout << e.what() << '\n';
 		}
 	}
     return (0);
