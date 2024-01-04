@@ -6,11 +6,11 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 14:56:54 by aselnet           #+#    #+#             */
-/*   Updated: 2024/01/04 14:16:41 by aselnet          ###   ########.fr       */
+/*   Updated: 2024/01/04 18:03:09 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BitcoinExchange.hpp"
+#include "../include/BitcoinExchange.hpp"
 
 BitcoinExchange::BitcoinExchange()
 {

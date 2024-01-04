@@ -6,11 +6,11 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 14:56:54 by aselnet           #+#    #+#             */
-/*   Updated: 2024/01/02 16:27:01 by aselnet          ###   ########.fr       */
+/*   Updated: 2024/01/04 18:03:25 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RPN.hpp"
+#include "../include/RPN.hpp"
 
 int	process_rpn(std::string argv)
 {

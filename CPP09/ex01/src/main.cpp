@@ -6,11 +6,11 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 10:23:14 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/31 15:59:54 by aselnet          ###   ########.fr       */
+/*   Updated: 2024/01/04 18:03:20 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RPN.hpp"
+#include "../include/RPN.hpp"
 
 int main(int argc, char **argv)
 {
