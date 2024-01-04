@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 14:56:54 by aselnet           #+#    #+#             */
-/*   Updated: 2024/01/04 18:03:09 by aselnet          ###   ########.fr       */
+/*   Updated: 2024/01/04 18:34:02 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ BitcoinExchange::BitcoinExchange(const std::string csv)
 
     std::string line;
 
-    if (!inputFile.is_open()) 
+    if (!inputFile.is_open())
 	{
         std::cerr << "Error opening CSV file." << std::endl;
         return ;
     }
 
-	double			value;
+	float			value;
 	std::getline(inputFile, line);
     while (std::getline(inputFile, line))
 	{

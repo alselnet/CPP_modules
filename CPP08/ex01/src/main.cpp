@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 10:23:14 by aselnet           #+#    #+#             */
-/*   Updated: 2024/01/04 17:40:20 by aselnet          ###   ########.fr       */
+/*   Updated: 2024/01/04 18:27:42 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int main()
 		span s1(10);
 		span s2(10);
 
-		int	tmp[] = {-5, 18, 89, -21, 42, 0, 210};
+		int	tmp[] = {-21, 18, 89, -21, 42, 0, 210};
 		std::list<int> list(tmp, tmp + sizeof(tmp) / sizeof(tmp[0]));
 		std::cout << "shortest span:" << std::endl;
 		try
