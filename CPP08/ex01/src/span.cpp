@@ -6,11 +6,11 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 17:07:26 by aselnet           #+#    #+#             */
-/*   Updated: 2024/01/03 17:45:33 by aselnet          ###   ########.fr       */
+/*   Updated: 2024/01/04 17:15:10 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "span.hpp"
+#include "../include/span.hpp"
 
 span::span() : _N(0)
 {

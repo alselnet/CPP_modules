@@ -6,11 +6,11 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 10:23:14 by aselnet           #+#    #+#             */
-/*   Updated: 2024/01/03 17:45:48 by aselnet          ###   ########.fr       */
+/*   Updated: 2024/01/04 17:15:01 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "span.hpp"
+#include "../include/span.hpp"
 
 int main()
 {
@@ -109,7 +109,7 @@ int main()
 		}
 		try
 		{
-			std::cout << s1.shortestSpan() << std::endl << std::endl;
+			std::cout << s1.shortestSpan() << std::endl;
 		}
 		catch(const std::exception& e)
 		{
