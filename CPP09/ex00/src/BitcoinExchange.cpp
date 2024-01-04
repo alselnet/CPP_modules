@@ -6,7 +6,7 @@
 /*   By: aselnet <aselnet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 14:56:54 by aselnet           #+#    #+#             */
-/*   Updated: 2023/12/29 16:32:09 by aselnet          ###   ########.fr       */
+/*   Updated: 2024/01/04 14:16:41 by aselnet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,7 +185,7 @@ void	BitcoinExchange::processPrices(std::string input) const
         return ;
     }
 
-	double			value;
+	float			value;
 	std::getline(inputFile, line);
     while (std::getline(inputFile, line))
 	{
@@ -208,7 +208,7 @@ void	BitcoinExchange::processPrices(std::string input) const
             std::cerr << "Error: bad value." << std::endl;
 		else if (checkVal(value) == true)
 		{
-			double price;
+			float price;
 			price = BitcoinExchange::getPrice(key, value);
 			std::cout << key << " => " << value << " = " << price << std::endl;
 		}
